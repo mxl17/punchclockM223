@@ -12,13 +12,15 @@ const createEntry = (e) => {
     entry['checkIn'] = dateAndTimeToDate(formData.get('checkInDate'), formData.get('checkInTime'));
     entry['checkOut'] = dateAndTimeToDate(formData.get('checkOutDate'), formData.get('checkOutTime'));
 
-    fetch(`${URL}/entries`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(entry)
-    }).then((result) => {
+    fetch(`${URL}/entries`,
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.getItem("token")
+            },
+            body: JSON.stringify(entry)
+        }).then((result) => {
         result.json().then((entry) => {
             entries.push(entry);
             renderEntries();
@@ -27,8 +29,12 @@ const createEntry = (e) => {
 };
 
 const indexEntries = () => {
+    let token = localStorage.getItem("token");
     fetch(`${URL}/entries`, {
-        method: 'GET'
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer ' + token
+        }
     }).then((result) => {
         result.json().then((result) => {
             entries = result;
@@ -37,6 +43,16 @@ const indexEntries = () => {
     });
     renderEntries();
 };
+
+fetch(`${URL}/entries`, {
+    headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem("token")
+    }
+}).then(function (response) {
+    if (response.status === 401) {
+        window.location = "/login.html";
+    }
+});
 
 const createCell = (text) => {
     const cell = document.createElement('td');
@@ -64,7 +80,10 @@ const renderEntries = () => {
 
 function deleteEntry(id) {
     fetch(`${URL}/entries/${id}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem("token")
+        }
     });
     location.reload();
 }
