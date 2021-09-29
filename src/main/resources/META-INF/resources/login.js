@@ -15,5 +15,6 @@ function login() {
             console.log(result);
             localStorage.setItem("token", result);
         });
+        window.location = "http://localhost:8080";
     });
 }
