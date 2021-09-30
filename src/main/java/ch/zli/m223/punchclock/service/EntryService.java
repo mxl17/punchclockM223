@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
 import ch.zli.m223.punchclock.domain.Entry;
+import ch.zli.m223.punchclock.domain.User;
 import io.quarkus.security.Authenticated;
 
 @Authenticated
@@ -34,6 +35,13 @@ public class EntryService {
     public Entry findEntryByID(Long id) {
         Entry findEntry = entityManager.find(Entry.class, id);
         return findEntry;
+    }
+
+    @Transactional
+    public List<Entry> findEntryByUserID(Long id) {
+        return entityManager.createQuery(
+                        "SELECT e from Entry e WHERE e.user.id = :id", Entry.class).
+                setParameter("id", id).getResultList();
     }
 
     @SuppressWarnings("unchecked")

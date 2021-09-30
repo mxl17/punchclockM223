@@ -27,13 +27,13 @@ const createEntry = (e) => {
         result.json().then((entry) => {
             entries.push(entry);
             renderEntries();
-        });
+        })
     });
 };
 
 const indexEntries = () => {
     let token = localStorage.getItem("token");
-    fetch(`${URL}/entries`, {
+    fetch(`${URL}/entries/user/${localStorage.getItem("id")}`, {
         method: 'GET',
         headers: {
             'Authorization': 'Bearer ' + token
