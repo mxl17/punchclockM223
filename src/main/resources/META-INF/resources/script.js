@@ -11,6 +11,9 @@ const createEntry = (e) => {
     const entry = {};
     entry['checkIn'] = dateAndTimeToDate(formData.get('checkInDate'), formData.get('checkInTime'));
     entry['checkOut'] = dateAndTimeToDate(formData.get('checkOutDate'), formData.get('checkOutTime'));
+    entry['category'] = {"id" : document.getElementById("category").value};
+    entry['workspace'] = {"id" : document.getElementById("workspace").value};
+    entry['user'] = {"id" : localStorage.getItem("id")};
 
     fetch(`${URL}/entries`,
         {
