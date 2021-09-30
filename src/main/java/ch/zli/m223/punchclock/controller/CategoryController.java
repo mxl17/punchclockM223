@@ -35,7 +35,7 @@ public class CategoryController {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    @Operation(summary = "Add a new Category", description = "The newly created entry is returned. The id may not be passed.")
+    @Operation(summary = "Add a new Category", description = "The newly created category is returned. The id may not be passed.")
     public Category add(Category category) {
         return categoryService.createCategory(category);
     }
