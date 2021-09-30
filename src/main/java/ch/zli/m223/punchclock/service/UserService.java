@@ -44,7 +44,7 @@ public class UserService {
     }
 
     @SuppressWarnings("unchecked")
-    public List<Workspace> findAll() {
+    public List<User> findAll() {
         var query = entityManager.createQuery("FROM User");
         return query.getResultList();
     }

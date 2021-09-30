@@ -11,9 +11,9 @@ import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
+import java.util.Objects;
 
 @Path("/users")
-@Authenticated
 @Tag(name = "Users", description = "Handling of users")
 public class UserController {
     @Inject
@@ -22,7 +22,7 @@ public class UserController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(summary = "List all Users", description = "")
-    public List<Workspace> list() {
+    public List<User> list() {
         return userService.findAll();
     }
 
@@ -37,8 +37,20 @@ public class UserController {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     @Operation(summary = "Add a new User", description = "")
-    public User add(User user) {
-        return userService.createUser(user);
+    public boolean add(User newUser) {
+        boolean check = true;
+        for (User user : list()) {
+            if (Objects.equals(user.getUsername(), newUser.getUsername())) {
+                check = false;
+                break;
+            }
+        }
+        if (check) {
+            userService.createUser(newUser);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @DELETE
