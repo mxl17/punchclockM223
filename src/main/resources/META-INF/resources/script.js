@@ -71,6 +71,8 @@ const renderEntries = () => {
         row.appendChild(createCell(entry.id));
         row.appendChild(createCell(new Date(entry.checkIn).toLocaleString()));
         row.appendChild(createCell(new Date(entry.checkOut).toLocaleString()));
+        row.appendChild(createCell(entry.category.title));
+        row.appendChild(createCell(entry.workspace.title));
         let btn = document.createElement("button");
         btn.innerText = "Delete";
         btn.onclick = () => {
