@@ -21,11 +21,10 @@ public class AuthenticationController {
     @POST
     @Path("/login")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
-    public String login(User user) {
-        // TODO check if user exists
+    @Produces(MediaType.APPLICATION_JSON)
+    public User login(User user) {
         if(authenticationService.checkIfUserExists(user)) {
-            return authenticationService.GenerateValidJwtToken(user.getUsername());
+            return authenticationService.GenerateValidJwtToken(user);
         }
         else {
             throw new NotAuthorizedException("User ["+user.getUsername()+"] not known");

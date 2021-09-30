@@ -10,7 +10,6 @@ import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 import java.util.List;
 
-@Authenticated
 @ApplicationScoped
 public class UserService {
 
@@ -36,6 +35,12 @@ public class UserService {
     public User findUserByID(Long id) {
         User findUser = entityManager.find(User.class, id);
         return findUser;
+    }
+
+    public User findUserByUsername(String username) {
+        return entityManager.createQuery(
+                        "SELECT user from User user WHERE user.username = :username", User.class).
+                setParameter("username", username).getSingleResult();
     }
 
     @SuppressWarnings("unchecked")

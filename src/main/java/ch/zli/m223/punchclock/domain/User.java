@@ -1,6 +1,7 @@
 package ch.zli.m223.punchclock.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.*;
 import java.util.List;
@@ -16,6 +17,10 @@ public class User {
 
     @Column(nullable = false)
     private String password;
+
+    @Transient
+    @JsonInclude
+    public String token;
 
     @OneToMany(mappedBy = "user")
     @JsonIgnore

@@ -9,6 +9,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
+
 import ch.zli.m223.punchclock.domain.User;
 import io.smallrye.jwt.build.Jwt;
 import org.eclipse.microprofile.jwt.Claims;
@@ -19,27 +20,36 @@ public class AuthenticationService {
     @Inject
     EntityManager entityManager;
 
+    @Inject
+    UserService userService;
+
+
     public boolean checkIfUserExists(User user) {
         var query = entityManager.createQuery("SELECT COUNT(*) FROM User WHERE username = :name AND password = :password");
         query.setParameter("name", user.getUsername());
         query.setParameter("password", user.getPassword());
         var result = query.getSingleResult();
 
-        if((long)result == 1) {
+        if ((long) result == 1) {
             return true;
         }
         return false;
     }
 
-    public String GenerateValidJwtToken(String username) {
+    public User GenerateValidJwtToken(User user) {
         String token =
                 Jwt.issuer("https://zli.ch/issuer")
-                        .upn(username)
+                        .upn(user.getUsername())
                         .groups(new HashSet<>(Arrays.asList("User", "Admin")))
                         .claim(Claims.birthdate.name(), "2001-07-13")
                         .expiresIn(Duration.ofHours(1))
                         .sign();
-        return token;
+
+
+        user = userService.findUserByUsername(user.getUsername());
+        user.token = token;
+        user.setPassword("");
+        return user;
     }
 
 }

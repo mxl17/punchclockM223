@@ -11,9 +11,9 @@ function login() {
         },
         body: '{"password": "' + password + '", "username": "' + username + '"}'
     }).then((result) => {
-        result.text().then((result) => {
-            console.log(result);
-            localStorage.setItem("token", result);
+        result.json().then((result) => {
+            localStorage.setItem("token", result.token);
+            localStorage.setItem("id", result.id);
         });
         window.location = "http://localhost:8080";
     });
