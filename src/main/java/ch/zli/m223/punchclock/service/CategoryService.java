@@ -3,11 +3,13 @@ package ch.zli.m223.punchclock.service;
 
 import ch.zli.m223.punchclock.domain.Category;
 
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 import java.util.List;
 
+@RequestScoped
 public class CategoryService {
     @Inject
     private EntityManager entityManager;
