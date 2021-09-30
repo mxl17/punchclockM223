@@ -93,3 +93,9 @@ document.addEventListener('DOMContentLoaded', function(){
     createEntryForm.addEventListener('submit', createEntry);
     indexEntries();
 });
+
+function logout() {
+    localStorage.setItem("token", "");
+    localStorage.setItem("id", "");
+    location.reload();
+}
