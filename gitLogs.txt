@@ -1,0 +1,203 @@
+commit 1ca607a3c5eab4ec4c4a728462c4274d55aa59e0
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 16:30:21 2021 +0200
+
+    Kommentare an alle Schnittstellen eingefügt.
+
+commit e796d0dbc3c618fa06a8941022b514f479084ea8
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 16:19:43 2021 +0200
+
+    README erweitert
+
+commit 271cb6736e4706a808e72c58850fa2ce9362b19c
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 16:18:29 2021 +0200
+
+    Neuen User ins hinzugefügt.
+
+commit ffb34375aa22a4e6da41bc1566056475bf014fd3
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 16:06:13 2021 +0200
+
+    Nur die eigenen entries werden dem angemeldeten User angezeigt
+
+commit 5e93b49240e471ec4f61a05473bb16578ccfe59f
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 15:52:20 2021 +0200
+
+    Kategorie und workspace im ui anzeigen
+
+commit 30aac0515ca0ca2da4919c487dbd6ea67c63afe8
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 15:41:47 2021 +0200
+
+    Kategorie, user und workspace wird bei einem erstellten entry hinzugefügt
+
+commit e49b5a0dfca78dc8bfd464891b7da1f5428b82d3
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 15:21:35 2021 +0200
+
+    import angepasst
+
+commit 3d030afb0397b4ed33b999cbcdc3c2c15132a705
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 15:13:17 2021 +0200
+
+    category und workspace in Formular hinzugefügt, Daten von category und workspace werden dynamisch angezeigt.
+
+commit 8752a506a4b726817a40ef8df178614c5a8376c9
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 14:04:40 2021 +0200
+
+    Logout implementiert
+
+commit e342c40e01025e1080041c598ab704129b20c727
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 14:04:23 2021 +0200
+
+    Logout button erstelt
+
+commit b688161496420e263f8ee53df4555a9431e1c7ed
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 13:41:40 2021 +0200
+
+    User Registrierung erstellt
+
+commit 8fcd4e97bce4dd8f61690377b0cf817be3c1b2e4
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 13:41:26 2021 +0200
+
+    Login angepasst und css
+
+commit 8e66839af52c1c4c9a04f1cdb524decb12b54d62
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 11:14:27 2021 +0200
+
+    Login angepasst, token und id werden im local storage gespeichert
+
+commit 70f3cdfdc6bb8ef45c7480768cd29b0b0fa12824
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 10:41:59 2021 +0200
+
+    insert query für entry erstellt
+
+commit 4e73223a0792d930f82330f93b822d66c1a773d2
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 10:16:34 2021 +0200
+
+    Insert Queries erweitert und angepasst
+
+commit 0e3bc0c60cc358b7846e16b6d85681c52661c0a6
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 10:15:20 2021 +0200
+
+    UserController Klasse implementiert
+
+commit 9cdc77f46069bbe34452f57b4538ee617c4af19b
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 09:39:52 2021 +0200
+
+    UserService ergänzt
+
+commit 612db689f7d6c574ef3d61c5c8373bd798a01eba
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 09:38:40 2021 +0200
+
+    UserService implementiert & UserController erstellt
+
+commit ac329dcde5bb41e0d869653dc4968a388fe428e8
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 09:05:31 2021 +0200
+
+    WorkspaceController implementiert
+
+commit ad31a54c6c2a2133f5444c8145144cfe7cda232d
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 09:01:53 2021 +0200
+
+    WorkspaceService implementiert
+
+commit debdf4cace8b0fe16043c42a944ee10d1af3843e
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 09:01:33 2021 +0200
+
+    Textfehler in CategoryController verbessert
+
+commit 85fd4da2ed697129682402e104190d52e805db6d
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 08:49:41 2021 +0200
+
+    Workspace Klasse implementiert
+
+commit 55888604e119f928e1604600c5403c455d4c394a
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 08:48:01 2021 +0200
+
+    Klassen für Workspace, WorkspaceService und WorkspaceController erstellt
+
+commit 631ecd761b7060d61a5a609fe2084953e244c38b
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 08:47:11 2021 +0200
+
+    getUser und setUser in Entry erstellt
+
+commit 5b6b6611574758f23bdce82070ba8a67980c1513
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Thu Sep 30 08:21:27 2021 +0200
+
+    Klasse CategoryService mit @RequestScoped ergänzt
+
+commit e3cdcbc31e94366ced2e7a6c078671dda2e5e87c
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Wed Sep 29 20:07:23 2021 +0200
+
+    CategoryController erstellt
+
+commit 5f35358bc3a154fb3f0923946c33bffd931e336d
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Wed Sep 29 19:41:49 2021 +0200
+
+    CategoryService erstellt
+
+commit 33d27a568418fd15efc96ca861d7c111859cd63b
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Wed Sep 29 19:04:08 2021 +0200
+
+    Weiterleitung auf Startseite nach Anmeldung
+
+commit c2d60c4701e1a81e0e4e45f11dc64ca198ac2c51
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Wed Sep 29 16:36:20 2021 +0200
+
+    login Funktionalität erstellt
+
+commit 4e5aa9dc2adf3ebe34e116b9d80f1ca606d5b9de
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Wed Sep 29 16:22:52 2021 +0200
+
+    Seite kann nur angezeigt werden, wenn User authenticated ist.
+
+commit 27430bcb221ee9516d9704a05b2559995723e53d
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Wed Sep 29 16:21:24 2021 +0200
+
+    EntryController @Authenticated gegeben
+
+commit 10ac6be4e1ed77159a24a4ac649e16efc8858b04
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Wed Sep 29 16:12:45 2021 +0200
+
+    login view created
+
+commit ea48a8052c8b1a5acb7137775d1bfcf0756cde9b
+Author: mxl17 <mert.takil@edu.tbz.ch>
+Date:   Wed Sep 29 11:08:05 2021 +0200
+
+    Initial commit
+
+commit ab63c2472c5b9b9f18dcaa6d7297a9ba8e0e3853
+Author: mxl17 <89915581+mxl17@users.noreply.github.com>
+Date:   Wed Sep 29 10:56:07 2021 +0200
+
+    Initial commit

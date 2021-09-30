@@ -26,3 +26,4 @@ Man kann sich registrieren und einloggen. Ebenfalls kann man sich als eingeloggt
 
 Beispieldaten sind im Verzeichnis ./src/main/resources/import.sql gespeichert und werden automatisch beim Start der Applikation in die Datenbank gespeichert.
 
+Die Gitlogs sind im File gitLogs.txt.
