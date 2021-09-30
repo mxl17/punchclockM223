@@ -2,12 +2,16 @@ package ch.zli.m223.punchclock.service;
 
 import ch.zli.m223.punchclock.domain.User;
 import ch.zli.m223.punchclock.domain.Workspace;
+import io.quarkus.security.Authenticated;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 import java.util.List;
 
+@Authenticated
+@ApplicationScoped
 public class UserService {
 
     @Inject
