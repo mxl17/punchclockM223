@@ -5,3 +5,4 @@ INSERT INTO workspace (title) VALUES ('Büro');
 INSERT INTO workspace (title) VALUES ('Home Office');
 INSERT INTO workspace (title) VALUES ('Extern');
 INSERT INTO User (PASSWORD, USERNAME) VALUES ('test', 'testUser');
+INSERT INTO User (PASSWORD, USERNAME) VALUES ('test', 'otherUser');
