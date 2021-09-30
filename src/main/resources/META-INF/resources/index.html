@@ -13,33 +13,49 @@
                 integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
         <script src="script.js" type="application/javascript"></script>
     </head>
-    <body>
+    <body onload="loadCategory(), loadWorkspace()">
         <div class="d-flex justify-content-end mt-2">
             <button class="btn btn-secondary" onclick="logout()">Logout</button>
         </div>
 
-        <form id="createEntryForm">
-            <label for="checkIn">Check in</label>
-            <input type="date" name="checkInDate" id="checkIn" required>
-            <input type="time" name="checkInTime" required>
-            <label for="checkOut">Check out</label>
-            <input type="date" name="checkOutDate" id="checkOut" required>
-            <input type="time" name="checkOutTime" required>
-            <input type="submit" value="Save" />
-        </form>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Check in</th>
-                    <th>Check out</th>
-                </tr>
-            </thead>
-            <tbody id="entryDisplay">
-                <tr>
-                    <td colspan="3">Loading...</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="d-flex justify-content-center">
+            <form id="createEntryForm">
+                <label for="checkIn">Check in</label>
+                <input type="date" class="form-control" name="checkInDate" id="checkIn" required>
+                <input type="time" class="form-control" name="checkInTime" required>
+
+                <label for="checkOut">Check out</label>
+                <input type="date" class="form-control" name="checkOutDate" id="checkOut" required>
+                <input type="time" class="form-control" name="checkOutTime" required>
+
+                <label for="category">Category</label>
+                <select class="form-select" aria-label="Default select example" id="category">
+                    <option disabled selected>Choose a category</option>
+                </select>
+
+                <label for="workspace">Workspace</label>
+                <select class="form-select" aria-label="Default select example" id="workspace">
+                    <option disabled selected>Choose a Workspace</option>
+                </select>
+
+                <input type="submit" value="Save" />
+            </form>
+        </div>
+        <div class="d-flex justify-content-center">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Check in</th>
+                        <th>Check out</th>
+                    </tr>
+                </thead>
+                <tbody id="entryDisplay">
+                    <tr>
+                        <td colspan="3">Loading...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>

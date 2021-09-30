@@ -99,3 +99,37 @@ function logout() {
     localStorage.setItem("id", "");
     location.reload();
 }
+
+function loadCategory() {
+    fetch(`${URL}/categories`, {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem("token")
+        }
+    }).then((result) => {
+        result.json().then((result) => {
+            result.forEach((result) => {
+                let option = new Option(result.title);
+                option.value = result.id;
+                document.getElementById("category").add(option);
+            })
+        })
+    })
+}
+
+function loadWorkspace() {
+    fetch(`${URL}/workspaces`, {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem("token")
+        }
+    }).then((result) => {
+        result.json().then((result) => {
+            result.forEach((result) => {
+                let option = new Option(result.title);
+                option.value = result.id;
+                document.getElementById("workspace").add(option);
+            })
+        })
+    })
+}
