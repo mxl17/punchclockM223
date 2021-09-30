@@ -22,6 +22,9 @@ public class Entry {
     @ManyToOne
     private User user;
 
+    @ManyToOne
+    private Workspace workspace;
+
     public Long getId() {
         return id;
     }
@@ -60,6 +63,14 @@ public class Entry {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Workspace getWorkspace() {
+        return workspace;
+    }
+
+    public void setWorkspace(Workspace workspace) {
+        this.workspace = workspace;
     }
 
 }
