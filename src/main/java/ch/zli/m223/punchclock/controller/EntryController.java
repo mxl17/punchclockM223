@@ -23,7 +23,7 @@ public class EntryController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Operation(summary = "List all Entries", description = "")
+    @Operation(summary = "List all Entries", description = "Alle Entries abfragen")
     public List<Entry> list() {
         return entryService.findAll();
     }
@@ -31,6 +31,7 @@ public class EntryController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{id}")
+    @Operation(description = "Einzelne Entries mit einer bestimmten ID abfragen")
     public Entry getEntry(@PathParam("id") Long id) {
         return entryService.findEntryByID(id);
     }
@@ -38,6 +39,7 @@ public class EntryController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/user/{id}")
+    @Operation(description = "Alle Entries holen, die von einem bestimmten user erstellt wurden")
     public List<Entry> getEntryByUserId(@PathParam("id") Long id) {
         return entryService.findEntryByUserID(id);
     }
@@ -52,7 +54,7 @@ public class EntryController {
 
     @Path("/{id}")
     @DELETE
-    @Operation(summary = "Deletes an Entry", description = "")
+    @Operation(summary = "Deletes an Entry", description = "Entry löschen")
     public void delete(@PathParam("id") Long id) {
         entryService.deleteEntry(id);
     }
@@ -60,6 +62,7 @@ public class EntryController {
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
+    @Operation(description = "Entry bearbeiten")
     public Entry updateEntry(Entry entry) {
         return entryService.update(entry);
     }

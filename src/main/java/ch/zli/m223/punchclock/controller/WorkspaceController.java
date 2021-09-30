@@ -20,7 +20,7 @@ public class WorkspaceController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Operation(summary = "List all Workspaces", description = "")
+    @Operation(summary = "List all Workspaces", description = "Alle Workspaces abfragen")
     public List<Workspace> list() {
         return workspaceService.findAll();
     }
@@ -28,6 +28,7 @@ public class WorkspaceController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{id}")
+    @Operation(description = "Einzelne Workspaces mit einer bestimmten ID abfragen")
     public Workspace getWorkspace(@PathParam("id") Long id) {
         return workspaceService.findWorkspaceByID(id);
     }
@@ -42,7 +43,7 @@ public class WorkspaceController {
 
     @DELETE
     @Path("/{id}")
-    @Operation(summary = "Deletes a Workspace", description = "")
+    @Operation(summary = "Deletes a Workspace", description = "Ein Workspace löschen")
     public void delete(@PathParam("id") Long id) {
         workspaceService.deleteWorkspace(id);
     }
@@ -50,6 +51,7 @@ public class WorkspaceController {
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
+    @Operation(description = "Ein Workspace bearbeiten")
     public Workspace updateWorkspace(Workspace workspace) {
         return workspaceService.update(workspace);
     }

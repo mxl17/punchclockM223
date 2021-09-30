@@ -21,7 +21,7 @@ public class UserController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Operation(summary = "List all Users", description = "")
+    @Operation(summary = "List all Users", description = "Alle Users abfragen")
     public List<User> list() {
         return userService.findAll();
     }
@@ -29,6 +29,7 @@ public class UserController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{id}")
+    @Operation(description = "Einzelne User mit einer bestimmten ID abfragen")
     public User getUser(@PathParam("id") Long id) {
         return userService.findUserByID(id);
     }
@@ -36,7 +37,7 @@ public class UserController {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    @Operation(summary = "Add a new User", description = "")
+    @Operation(summary = "Add a new User", description = "Einen User erfassen")
     public boolean add(User newUser) {
         boolean check = true;
         for (User user : list()) {
@@ -55,7 +56,7 @@ public class UserController {
 
     @DELETE
     @Path("/{id}")
-    @Operation(summary = "Deletes a User", description = "")
+    @Operation(summary = "Deletes a User", description = "Einen User löschen")
     public void delete(@PathParam("id") Long id) {
         userService.deleteUser(id);
     }
@@ -63,6 +64,7 @@ public class UserController {
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
+    @Operation(description = "Einen User bearbeiten")
     public User updateUser(User user) {
         return userService.update(user);
     }

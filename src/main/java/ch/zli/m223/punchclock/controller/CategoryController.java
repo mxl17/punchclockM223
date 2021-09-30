@@ -20,7 +20,7 @@ public class CategoryController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Operation(summary = "List all Categories", description = "")
+    @Operation(summary = "List all Categories", description = "Alle Kategorien abfragen")
     public List<Category> list() {
         return categoryService.findAll();
     }
@@ -28,6 +28,7 @@ public class CategoryController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{id}")
+    @Operation(description = "Einzelne Kategorien mit einer bestimmten ID abfragen")
     public Category getCategory(@PathParam("id") Long id) {
         return categoryService.findCategoryByID(id);
     }
@@ -42,7 +43,7 @@ public class CategoryController {
 
     @Path("/{id}")
     @DELETE
-    @Operation(summary = "Deletes a Category", description = "")
+    @Operation(summary = "Deletes a Category", description = "Eine einzelne Kategorie nach ID löschen")
     public void delete(@PathParam("id") Long id) {
         categoryService.deleteCategory(id);
     }
@@ -50,6 +51,7 @@ public class CategoryController {
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
+    @Operation(description = "Kategorien bearbeiten")
     public Category updateCategory(Category category) {
         return categoryService.update(category);
     }
